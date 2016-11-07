@@ -82,7 +82,7 @@ public class CrimeListFragment extends Fragment {
             if (data == null) {
                 return;
             }
-            updateUI(data.getIntExtra(CrimeActivity.CRIME_INDEX, -1));
+            updateUI(data.getIntExtra(CrimePagerActivity.EXTRA_CRIME_INDEX, -1));
         }
     }
 
@@ -111,8 +111,8 @@ public class CrimeListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-            intent.putExtra(CrimeActivity.CRIME_INDEX, this.getAdapterPosition());
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
+            intent.putExtra(CrimePagerActivity.EXTRA_CRIME_INDEX, this.getAdapterPosition());
             startActivityForResult(intent, REQUEST_CRIME_ACTIVITY_RESULT);
         }
     }
