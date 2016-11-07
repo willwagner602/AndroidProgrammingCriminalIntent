@@ -37,6 +37,7 @@ public class CrimePagerActivity extends FragmentActivity {
         setContentView(R.layout.activity_crime_pager);
 
         UUID crimeId = (UUID) getIntent().getSerializableExtra(EXTRA_CRIME_ID);
+        final int crimeIndex = (int) getIntent().getSerializableExtra(EXTRA_CRIME_INDEX);
 
         mViewPager = (ViewPager) findViewById(R.id.activity_crime_pager_view_pager);
 
@@ -46,6 +47,12 @@ public class CrimePagerActivity extends FragmentActivity {
             @Override
             public Fragment getItem(int position) {
                 Crime crime = mCrimes.get(position);
+
+                // pass back the index of this crime in the view
+                Intent data = new Intent();
+                data.putExtra(EXTRA_CRIME_INDEX, crimeIndex);
+                setResult(RESULT_OK, data);
+
                 return CrimeFragment.newInstance(crime.getId());
             }
 
