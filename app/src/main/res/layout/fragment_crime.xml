@@ -47,12 +47,48 @@
         android:layout_marginRight="16dp"
         android:text="@string/crime_solved_label"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/crime_suspect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/crime_suspect_text"/>
+
+        <Button
+            android:id="@+id/crime_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/crime_report_text"/>
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/delete_crime"
+        android:id="@+id/call_suspect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/delete_label"/>
+        android:layout_marginLeft="16dp"
+        android:text="@string/crime_call_suspect"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/delete_crime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="22dp"
+            android:layout_alignParentBottom="true"
+            android:text="@string/delete_label"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
