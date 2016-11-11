@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/crime_title_label"
-        style="?android:listSeparatorTextViewStyle"/>
-
-    <EditText
-        android:id="@+id/crime_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="@string/crime_title_hint"/>
+    <include layout="@layout/view_camera_and_title"/>
 
     <TextView
         android:id="@+id/crime_details"
@@ -30,14 +19,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:layout_marginRight="16dp"
+        tools:text="Crime Date"/>
 
     <Button
         android:id="@+id/crime_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:layout_marginRight="16dp"
+        tools:text="Crime Time"/>
 
     <CheckBox
         android:id="@+id/crime_solved"
@@ -73,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
-        android:text="@string/crime_call_suspect"/>
+        tools:text="Call Suspect"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
